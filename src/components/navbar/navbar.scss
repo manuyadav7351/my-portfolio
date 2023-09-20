@@ -1,0 +1,200 @@
+.nav {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 50px;
+  position: relative;
+  padding: 10px;
+}
+
+.nav ul li {
+  font-family: var(--global-font);
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  position: relative;
+  line-height: 1em;
+  outline: none;
+  border: 2px solid black;
+  opacity: 0;
+  animation: animate 1s linear;
+  animation-fill-mode: both;
+  transition: all ease;
+}
+
+.nav ul .lii {
+  font-family: var(--global-font);
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  position: relative;
+  line-height: 1em;
+  outline: none;
+  border: 2px solid black;
+  opacity: 0;
+  animation: animate 1s linear;
+  animation-fill-mode: both;
+  transition: all ease;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav ul .lii:hover {
+  // -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(68, 68, 68, 0.2));
+  transform: translateX(-30px);
+  transition: 1s all ease-in-out;
+}
+
+.nav ul li:nth-child(0) .lii {
+  animation-delay: .5s;
+  /* Delay the animation for the first list item */
+}
+
+.nav ul li:nth-child(1) .lii {
+  animation-delay: 1.2s;
+  /* Delay the animation for the second list item */
+}
+
+.nav ul li:nth-child(2) .lii {
+  animation-delay: 1.9s;
+  /* Delay the animation for the third list item */
+}
+
+.nav ul li:nth-child(3) .lii {
+  animation-delay: 2.5s;
+  /* Delay the animation for the third list item */
+}
+
+.nav ul li:nth-child(4) .lii {
+  animation-delay: 3.3s;
+  /* Delay the animation for the third list item */
+}
+
+.nav ul li:nth-child(5) .lii {
+  animation-delay: 4s;
+  /* Delay the animation for the third list item */
+}
+
+@keyframes animate {
+  0% {
+    text-shadow: none;
+    border: none;
+    box-shadow: none;
+    color: black;
+    opacity: 100%;
+  }
+
+  100% {
+    color: var(--global-color);
+    box-shadow: 0 0 2px var(--global-color), 0 0 4px var(--global-color), 0 0px 10px var(--global-color); // 0 0 40px #fdfbfb, 0 0 80px #fdfbfb, 0 0 180px #fdfbfb
+    opacity: 100%;
+  }
+}
+
+
+/* media query for width less then 940 px*/
+
+@media (width <=940px) {
+  .nav ul li {
+    padding: 5px 5px;
+  }
+
+  .nav ul .lii {
+    font-size: 1rem;
+    padding: 5px 5px;
+  }
+
+  .nav ul {
+    gap: 40px;
+  }
+}
+
+/* media query for width less then 720 px*/
+
+@media (width <=720px) {
+
+  .nav ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .nav ul .lii:hover {
+    transform: translateY(6px);
+  }
+}
+
+
+/* media query for width less then 640px*/
+
+@media (max-width : 640px) {
+
+  .nav{
+    width: 100%;
+    align-items: center;
+  }
+  
+  .nav .dropdown .lii{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .parent-drop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav .dropdown .lii:hover{
+      background: black;
+      font-size: 35px;
+      box-shadow: 0px -2px 4px 0px white;
+  }
+
+  .nav .dropdown .dropdown-content{
+    top: 40px;
+    gap: 8px;
+    width: 200px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    background-color: black;
+    display: none;
+    transition: all ease-in-out 1s;
+  }
+
+  .nav .dropdown .dropdown-content.active{
+    display: flex;
+    transition: all ease-in-out 1s;
+  }
+
+  .lii:hover {
+    // -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(68, 68, 68, 0.2));
+    transform: translateY(0px);
+    transition: 1s all ease-in-out;
+    font-size: 20px !important;
+  }
+}

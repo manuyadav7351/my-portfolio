@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@300;400;800&family=Mr+Dafoe&family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+  --global-color : #fff;
+  --global-font : 'Plus Jakarta Sans';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App{
+    display: flex;
+    height: 100vh;
+    background: black;
+    z-index: -1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App__component{
+    flex: 5;
 }
 
-.App-link {
-  color: #61dafb;
+.App__navbar{
+    flex : 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* media query for width less then 940 px */
+
+@media (width <= 940px){
+    .App__component{
+        flex: 7;
+    }
+    
+    .App__navbar{
+        flex : 1;
+    }
+}
+
+/* media query for width less then 720 px */
+
+@media (width <= 720px) {
+    .App{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100vh;
+        background: black;
+        z-index: -1;
+    }
+    
+    .App__component{
+        height: 80vh;
+    }
+    
+    .App__navbar{
+        height: 20vh;
+    }
 }

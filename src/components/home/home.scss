@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@300;400;800&family=Mr+Dafoe&family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --global-font : 'Plus Jakarta Sans';
+    --global-color : #fff;
+}
+
+.home{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+.home_title_border{
+    border: 2px solid white;
+    padding: 10px;
+    box-shadow: 0 0 10px var(--global-color);
+}
+
+.home_title{
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--global-color);
+    font-size: 8vw;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-shadow: 0 8px 10px var(--global-color);
+    animation: animatedHome 1s forwards;
+    opacity: 0;
+    letter-spacing: 5px;
+}
+
+.home_title_top{
+    border:  2px solid white;   
+    padding: 20px 61px;
+    box-shadow: 0 0px 10px var(--global-color);
+}
+
+
+.home_subtitle{
+    display: flex;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--global-color);
+    font-size: 4vw;
+    letter-spacing: 3px;
+    display: inline-block;
+    text-shadow: 0 4px 6px var(--global-color);
+    animation: animatedHome 1s forwards;
+    opacity: 0;
+}
+
+
+.home_subtitle_top{
+    letter-spacing: 2px;
+    border:  2px solid white;   
+    padding: 20px 65px;
+    box-shadow: 0 0px 10px var(--global-color);
+}
+
+@keyframes animatedHome {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* media query for width less then 1200px */
+
+@media (width <= 1200px) {
+    .home_subtitle{
+        font-size: 2.5vw;
+        letter-spacing: 3px;
+    }
+
+    .home{
+        padding: 50px 30px;
+    }
+    
+}
+
+/* media query for width less then 940px */
+
+@media (width <= 940px) {
+    .home_subtitle{
+        font-size: 3vw;
+    }
+
+    .home{
+        padding: 50px 30px;
+    }
+    
+}
+
+
+/* media query for width less then 500px */
+
+@media (width <= 500px){
+
+    .home{
+        padding: 50px 10px;
+    }
+
+    .home_subtitle{
+        font-size: 4vw !important;
+    }
+
+    .home_title_top{
+        border:  2px solid white;   
+        padding: 20px 15px;
+        box-shadow: 0 0px 10px var(--global-color);
+    }
+
+    .home_subtitle_top{
+        letter-spacing: 2px;
+        border:  2px solid white;   
+        padding: 20px 15px;
+        box-shadow: 0 0px 10px var(--global-color);
+    }
+}

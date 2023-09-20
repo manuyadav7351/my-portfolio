@@ -1,0 +1,154 @@
+.contain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .glass{
+    position: relative;
+    width: 200px;
+    height: 240px;
+    background: linear-gradient(#fff, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 25px 25px rgba(180, 179, 179, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+    margin: 0 -40px;
+    transform: rotate(calc(var(--r) * 1deg));
+    backdrop-filter: blur(10px);
+}
+
+.container:hover .glass{
+    transform: rotate(0deg);
+    margin: 0 1vw;
+}
+
+.container .glass .front-card{
+    position: absolute;
+
+    z-index: 2;
+}
+
+
+.container .glass:hover{
+    cursor: pointer;
+}
+
+.container .glass::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: rgba(180, 179, 179, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Georgia;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.container .glass button{
+    outline: none;
+    border: none;
+    cursor: grab;
+}
+
+.container .glass .rotate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2px;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #353434;
+}
+
+/* media query for width less than 1200px*/
+
+@media (width <= 1200px) {
+
+    .container .glass{
+        position: relative;
+        width: 140px;
+        height: 190px;
+        margin: -80px -40px;
+    }
+
+    .container .glass::before{
+        height: 30px;
+        font-size: 10px;
+    }
+}
+
+/* media query for width less than 940px*/
+
+@media (width <= 940px) {
+
+    .container{
+        position: relative;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .container .glass{
+        position: relative;
+        width: 150px;
+        height: 200px;
+        margin: -80px -40px;
+    }
+
+    .container .glass::before{
+        height: 30px;
+        font-size: 10px;
+    }
+}
+
+
+/* media query for width less than 940px*/
+
+@media (width <= 720px){
+    .contain{
+        min-height: 80vh;
+    }
+}
+
+
+/* media query for width less than 500px*/
+
+@media (width <= 500px){
+    .container .glass{
+        position: relative;
+        width: 120px;
+        height: 160px;
+        margin: -80px -40px;
+    }
+
+    .container .glass::before{
+        height: 30px;
+        font-size: 8px;
+    }
+
+    .container .glass .rotate{
+        font-size: 12px;
+    }
+}

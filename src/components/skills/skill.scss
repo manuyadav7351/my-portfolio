@@ -1,0 +1,170 @@
+:root{
+    --cube-height : 100px;
+    --cube-width : 100px;
+}
+
+.skill{
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 50px;
+}
+
+.skill_cube{
+    position: relative;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    transform-style: preserve-3d;
+    background-color: #fff;
+    animation: Cubeanimate 4s linear infinite;
+    visibility: hidden;
+}
+
+
+@keyframes Cubeanimate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+        visibility: visible;
+    }
+}
+
+
+.skill_cube_inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+}
+
+.skill_cube_inner span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    // background: linear-gradient();
+    background: var(--global-color);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+.skill_top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    background-color: #fff;
+    transform: rotateX(90deg) translateZ(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill_top img{
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
+
+
+.skill_down{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cube-width);
+    height: var(--cube-height);
+    background: rgb(245, 246, 249);
+    transform: rotateX(90deg) translateZ(-100px);
+    filter: blur(30px);
+    box-shadow: 0 0 120px rgba(252, 252, 252);
+}
+
+/*  media query for width less then 940px */
+
+@media (width <= 940px) {
+    .skill_cube{
+        width: 80px;
+        height: 80px;
+    }
+
+    .skill_cube_inner span{
+        width: 80px;
+        height: 80px;
+        // background: linear-gradient();
+        background: var(--global-color);
+        transform: rotateY(calc(90deg * var(--i))) translateZ(40px);
+        font-size: large;
+    }
+
+    .skill_down{
+        width: 80px;
+        height: 80px;
+        transform: rotateX(90deg) translateZ(-100px);
+    }
+
+    .skill_top{
+        width: 80px;
+        height: 80px;
+        transform: rotateX(90deg) translateZ(40px);
+    }
+
+    .skill_top img{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+
+/* media query for width less than 940px*/
+
+@media (width <= 720px){
+    .skill{
+        height: 80vh;
+    }
+}
+
+
+/* media query for width less then 500px */
+
+@media (width <= 500px){
+    .skill{
+        width: 100%;
+        height: 80vh;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        align-items: center;
+        justify-items: center;
+        padding : 0px 10px;
+    }    
+
+    .skill_down{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+        background: rgb(245, 246, 249);
+        transform: rotateX(90deg) translateZ(-80px);
+    }
+}
