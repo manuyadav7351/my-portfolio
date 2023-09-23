@@ -7,7 +7,7 @@ const ResumeButton = () => {
         const resumePdfUrl =  process.env.PUBLIC_URL + '/ManuResume.pdf';
         const link = document.createElement('a');
         link.href = resumePdfUrl;
-        link.download = 'ManuResume.pdf';
+        link.download = 'ManusResume.pdf';
         link.click();
     }
 
