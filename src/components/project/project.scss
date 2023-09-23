@@ -68,6 +68,12 @@
     cursor: grab;
 }
 
+.container .glass img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
 .container .glass .rotate{
     position: absolute;
     top: 0;
