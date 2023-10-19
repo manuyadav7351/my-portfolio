@@ -6,13 +6,14 @@ import css from "../../assets/css.svg";
 import react from "../../assets/react-js.svg";
 import java from "../../assets/java.svg";
 import tailwind from "../../assets/tailwind.svg";
+import redux from "../../assets/redux.svg"
 
 const skills = [
   {name : "React JS" , img : react, id : 1},
   {name : "JS" , img : js, id : 2},
-  {name : "HTML" , img : html, id : 3},
-  {name : "CSS" , img : css, id : 4},
-  {name : "Tailwind CSS" , img : tailwind , id : 5},
+  {name : "Redux" , img : redux, id : 3},
+  {name : "HTML" , img : html, id : 4},
+  {name : "CSS" , img : css , id : 5},
   {name : "Java" , img : java, id : 6},
 ]
 
