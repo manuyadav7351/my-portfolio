@@ -2,7 +2,7 @@ import "./home.scss";
 
 const Home = () => {
   const words = ["M", "a", "n", "u Y","a", "d", "a", "v"];
-  const subtitle = ["I a", "m a R", "eact Js D", "eveloper"];
+  const subtitle = ["Working as a Angular js Intern at payNways"];
 
   return (
     <div className="home">

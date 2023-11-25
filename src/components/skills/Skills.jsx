@@ -7,14 +7,16 @@ import react from "../../assets/react-js.svg";
 import java from "../../assets/java.svg";
 import tailwind from "../../assets/tailwind.svg";
 import redux from "../../assets/redux.svg"
+import angular from "../../assets/angularjs.svg"
 
 const skills = [
   {name : "React JS" , img : react, id : 1},
-  {name : "JS" , img : js, id : 2},
-  {name : "Redux" , img : redux, id : 3},
-  {name : "HTML" , img : html, id : 4},
-  {name : "CSS" , img : css , id : 5},
-  {name : "Java" , img : java, id : 6},
+  {name : "Angular JS", img : angular, id : 2},
+  {name : "JS" , img : js, id : 3},
+  {name : "Redux" , img : redux, id : 4},
+  {name : "HTML" , img : html, id : 5},
+  {name : "CSS" , img : css , id : 6},
+  {name : "Java" , img : java, id : 7},
 ]
 
 const Skills = () => {
