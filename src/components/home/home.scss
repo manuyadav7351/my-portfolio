@@ -17,7 +17,7 @@
 
 .lightCord{
     position: absolute;
-    top: -20px;      /* Adjust to control vertical position */
+    top: -40px;      /* Adjust to control vertical position */
     left: 100px;    /* Adjust to control horizontal position */
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 .lightCordRope{
     width : 5px;
-    height : 140px;
+    height : 160px;
     border-radius : 5px;
     background-size : 10px 10px;
     background : linear-gradient(45deg, #f5f1ef 25%, #f9f6f4 25%, #e1dedb 50%, #f2ecea 50%, #fbf7f6 75%, #eae3de 75%);

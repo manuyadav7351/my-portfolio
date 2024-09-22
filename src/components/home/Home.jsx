@@ -9,8 +9,8 @@ const Home = () => {
   const [dragging , setDragging] = useState(false);
   const [position , setPosition] = useState(0);
   const [lightOn, setLightOn] = useState(false);
-  console.log(lightOn); 
-  const maxDragDistance = 20;
+  //console.log(lightOn); 
+  const maxDragDistance = 40;
 
   const handleMouseDown = () => {
     setDragging(true);
@@ -27,7 +27,7 @@ const Home = () => {
 
   const handleMouseMove = (e) => {
     const newPosition =  e.clientY - 100;
-    const constrainedPosition = Math.min(newPosition, maxDragDistance);  // Limit drag to 20px
+    const constrainedPosition = Math.min(newPosition, maxDragDistance);  // Limit drag to 40px
     setPosition(constrainedPosition > 0 ? constrainedPosition : 0);
   }
 
@@ -57,26 +57,26 @@ const Home = () => {
         <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown}></div>
       </div>
       <div className="home">
-        <div className="home_title_border">
-          <div className="home_title_top">
+        <div className={`${lightOn ? "home_title_border" : ""}`}>
+          <div className={`${lightOn ? "home_title_top" : ""}`}>
             {words.map((words, index) => (
               <span
                 key={index}
                 style={{ animationDelay: `${index * 0.4}s` }}
-                className="home_title"
+                className={`${lightOn ? "home_title" : ""}`}
               >
                 {words}
               </span>
             ))}
           </div>
         </div>
-        <div className="home_title_border">
-          <div className="home_subtitle_top">
+        <div className={`${lightOn ? "home_title_border" : ""}`}>
+          <div className={`${lightOn ? "home_subtitle_top" : ""}`}>
             {subtitle.map((word, index) => (
               <span
                 key={index}
                 style={{ animationDelay: `${index * 0.4}s` }}
-                className="home_subtitle"
+                className={`${lightOn ? "home_subtitle" : ""}`}
               >
                 {word}
               </span>
