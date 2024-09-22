@@ -63,6 +63,17 @@
     box-shadow: 0 3px 5px rgba(241, 235, 235, 0.2);
 }
 
+.lightMessage{
+    width: 180px;
+    top : 250px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
 .home_title_border{
     border: 2px solid white;
     padding: 10px;
