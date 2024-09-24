@@ -44,7 +44,7 @@ const Home = () => {
     if(touch){
 
     }else{
-      
+
     }
     if (dragging) {
       document.addEventListener("mousemove", handleMouseMove);
@@ -64,6 +64,7 @@ const Home = () => {
 
   return (
     <>
+    
       <div className="lightCord">
         <div className="lightCordRope" style={{ transform  :`translateY(${position}px)` }}></div>
         <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
