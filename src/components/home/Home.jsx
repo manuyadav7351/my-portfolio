@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./home.scss";
 import { useEffect } from "react";
+import "./home.scss";
 
 const Home = () => {
   const words = ["M", "a", "n", "u Y", "a", "d", "a", "v"];
@@ -52,9 +52,9 @@ const Home = () => {
     <>
       <div className="lightCord">
         <div className="lightCordRope" style={{ transform  :`translateY(${position}px)` }}></div>
-        <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown}></div>
-        <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown}></div>
-        <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown}></div>
+        <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
+        <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
+        <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
         { !lightOn ? <div className="lightMessage" >
           Please Pull Down
         </div> : '' }
