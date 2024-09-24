@@ -6,16 +6,17 @@ const Home = () => {
   const words = ["M", "a", "n", "u Y", "a", "d", "a", "v"];
   const subtitle = ["Working as a Software Developer at payNways"];
 
+  const [touch , setTouch] = useState(false);
   const [dragging , setDragging] = useState(false);
   const [position , setPosition] = useState(0);
   const [lightOn, setLightOn] = useState(false);
   //console.log(lightOn); 
   const maxDragDistance = 40;
 
+
   const handleMouseDown = () => {
     setDragging(true);
   }
-
   const handleMouseUp = () => {
     setDragging(false);
     if (position === maxDragDistance) {
@@ -24,14 +25,27 @@ const Home = () => {
       setLightOn(false); // Turn off the light if not fully dragged
     }
   }
-
   const handleMouseMove = (e) => {
     const newPosition =  e.clientY - 100;
     const constrainedPosition = Math.min(newPosition, maxDragDistance);  // Limit drag to 40px
     setPosition(constrainedPosition > 0 ? constrainedPosition : 0);
   }
 
+
+  const handleTouchStart = () => {
+    setTouch(touch);
+  }
+
+  const handleTouchEnd = () => {
+    setTouch(touch);
+  }
+
   useEffect(()=>{
+    if(touch){
+
+    }else{
+      
+    }
     if (dragging) {
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
@@ -46,15 +60,15 @@ const Home = () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  },[dragging,position]);
+  },[dragging,position, touch]);
 
   return (
     <>
       <div className="lightCord">
         <div className="lightCordRope" style={{ transform  :`translateY(${position}px)` }}></div>
-        <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
-        <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
-        <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
+        <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
+        <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
+        <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
         { !lightOn ? <div className="lightMessage" >
           Please Drag Down
         </div> : '' }
