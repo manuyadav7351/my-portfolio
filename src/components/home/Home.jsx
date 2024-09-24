@@ -56,7 +56,7 @@ const Home = () => {
         <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
         <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}></div>
         { !lightOn ? <div className="lightMessage" >
-          Please Pull Down
+          Please Drag Down
         </div> : '' }
       </div>
       <div className="home">
