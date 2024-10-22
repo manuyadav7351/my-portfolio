@@ -38,6 +38,17 @@
 
         .about-data{
             height: 80%;
+
+            .about-heading{
+                font-size: 1em;
+                margin-bottom: 10px;
+            }
+        
+            p{
+                font-size: .6em;
+                line-height: .9em;
+                word-spacing: .6em;
+            }
         }
     }
 }
