@@ -7,12 +7,25 @@
     justify-content: center;
 
     .about-data{
-        height: 80%;
+        height: 70%;
         width: 80%;
         border: 2px solid white;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 20px;
+
+        .about-heading{
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+    
+        p{
+            font-size: 1.2em;
+            line-height: 1.5em;
+            word-spacing: .14em;
+        }
     }
 }
 

@@ -1,100 +1,43 @@
-import { useState } from "react";
-import { useEffect } from "react";
+//import { useState } from "react";
+//import { useEffect } from "react";
 import "./home.scss";
 
 const Home = () => {
   const words = ["M", "a", "n", "u Y", "a", "d", "a", "v"];
   const subtitle = ["Working as a Software Developer at payNways"];
 
-  const [touch , setTouch] = useState(false);
-  const [dragging , setDragging] = useState(false);
-  const [position , setPosition] = useState(0);
-  const [lightOn, setLightOn] = useState(false);
+  //const [touch , setTouch] = useState(false);
+  //const [dragging , setDragging] = useState(false);
+  // const [position , setPosition] = useState(0);
+  //const [lightOn, setLightOn] = useState(true);
   //console.log(lightOn); 
-  const maxDragDistance = 40;
+  //const maxDragDistance = 40;
 
 
-  const handleMouseDown = () => {
-    setDragging(true);
-  }
-  const handleMouseUp = () => {
-    setDragging(false);
-    if (position === maxDragDistance) {
-      setLightOn(true);  // Turn on the light if fully dragged
-    } else {
-      setLightOn(false); // Turn off the light if not fully dragged
-    }
-  }
-  const handleMouseMove = (e) => {
-    const newPosition =  e.clientY - 100;
-    const constrainedPosition = Math.min(newPosition, maxDragDistance);  // Limit drag to 40px
-    setPosition(constrainedPosition > 0 ? constrainedPosition : 0);
-  }
-
-
-  const handleTouchStart = () => {
-    setTouch(touch);
-  }
-
-  const handleTouchEnd = () => {
-    setTouch(touch);
-  }
-
-  useEffect(()=>{
-    if(touch){
-
-    }else{
-
-    }
-    if (dragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    } else {
-      // Remove the event listeners when the drag ends
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    }
-
-    // Cleanup event listeners on component unmount
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-  },[dragging,position, touch]);
 
   return (
     <>
-    
-      <div className="lightCord">
-        <div className="lightCordRope" style={{ transform  :`translateY(${position}px)` }}></div>
-        <div className="lightCordHandle" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
-        <div className="lightCordHandle1" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
-        <div className="lightCordHandle2" style={{ transform  :`translateY(${position}px)` }} onMouseDown={handleMouseDown} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}></div>
-        { !lightOn ? <div className="lightMessage" >
-          Please Drag Down
-        </div> : '' }
-      </div>
       <div className="home">
-        <div className={`${lightOn ? "home_title_border" : ""}`}>
-          <div className={`${lightOn ? "home_title_top" : ""}`}>
+        <div className="home_title_border">
+          <div className="home_title_top">
             {words.map((words, index) => (
               <span
                 key={index}
                 style={{ animationDelay: `${index * 0.4}s` }}
-                className={`${lightOn ? "home_title" : ""}`}
+                className="home_title"
               >
                 {words}
               </span>
             ))}
           </div>
         </div>
-        <div className={`${lightOn ? "home_title_border" : ""}`}>
-          <div className={`${lightOn ? "home_subtitle_top" : ""}`}>
+        <div className="home_title_border">
+          <div className="home_subtitle_top">
             {subtitle.map((word, index) => (
               <span
                 key={index}
                 style={{ animationDelay: `${index * 0.4}s` }}
-                className={`${lightOn ? "home_subtitle" : ""}`}
+                className="home_subtitle"
               >
                 {word}
               </span>
