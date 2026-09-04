@@ -19,9 +19,6 @@ const contact = () => {
           </div>
         </form>
       </div>
-      <div className="contact-heading">
-        <h3>OPEN TO WORK</h3>
-      </div>
       <div className="contact-resume">
         <ResumeButton />
       </div>
